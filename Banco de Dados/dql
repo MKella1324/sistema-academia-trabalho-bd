@@ -1,0 +1,32 @@
+-- =========================
+-- DQL - CONSULTAS SIMPLES
+-- =========================
+
+SELECT * FROM alunos;
+
+SELECT * FROM planos;
+
+SELECT * FROM matriculas;
+
+-- =========================
+-- DQL - CONSULTA INNER JOIN
+-- =========================
+
+SELECT 
+    a.nome AS aluno,
+    p.nome_plano,
+    p.valor,
+    m.data_inicio
+FROM matriculas m
+INNER JOIN alunos a ON a.id_aluno = m.id_aluno
+INNER JOIN planos p ON p.id_plano = m.id_plano;
+
+-- =========================
+-- DQL - CONSULTA LEFT JOIN
+-- =========================
+SELECT 
+    a.nome AS aluno,
+    m.id_matricula,
+    m.data_inicio
+FROM alunos a
+LEFT JOIN matriculas m ON m.id_aluno = a.id_aluno;
