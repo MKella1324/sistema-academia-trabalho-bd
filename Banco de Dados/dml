@@ -1,0 +1,22 @@
+-- =========================
+-- DML - INSERÇÃO DE DADOS
+-- =========================
+
+INSERT INTO alunos (nome, cpf, telefone)
+VALUES 
+('Ana Maria', '12345678900', '86999998888'),
+('Carlos Rocha', '98765432100', '86988887777'),
+('Mariana Santiago', '45612378900', '86977776666'),
+('João Rubens', '32165498700', '86966665555');
+
+INSERT INTO planos (nome_plano, valor)
+VALUES
+('Plano Mensal', 120.00),
+('Plano Trimestral', 290.00),
+('Plano Anual', 900.00);
+
+INSERT INTO matriculas (id_aluno, id_plano, data_inicio)
+VALUES
+(1, 1, '2026-01-01'),
+(2, 2, '2026-02-01'),
+(3, 1, '2026-03-01');
