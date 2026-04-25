@@ -1,0 +1,36 @@
+-- =========================
+-- DDL - CRIAÇÃO DAS TABELAS
+-- =========================
+
+CREATE TABLE alunos (
+id_aluno SERIAL PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+cpf VARCHAR(11) UNIQUE NOT NULL,
+telefone VARCHAR(11) NOT NULL
+);
+
+CREATE TABLE planos (
+id_plano SERIAL PRIMARY KEY,
+nome_plano VARCHAR(100) NOT NULL,
+valor DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE matriculas (
+id_matricula SERIAL PRIMARY KEY,
+id_aluno INT NOT NULL,
+id_plano INT NOT NULL,
+data_inicio DATE NOT NULL,
+FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno) ON DELETE CASCADE,
+FOREIGN KEY (id_plano) REFERENCES planos(id_plano) ON DELETE RESTRICT
+);
+
+-- =========================
+-- ATUALIZAÇÃO DE TABELAS
+-- =========================
+
+ALTER TABLE matriculas
+ADD COLUMN ativa BOOLEAN DEFAULT TRUE;
+
+CREATE UNIQUE INDEX idx_matricula_ativa
+ON matriculas (id_aluno)
+WHERE ativa = TRUE;
