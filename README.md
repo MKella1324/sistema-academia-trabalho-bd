@@ -164,6 +164,6 @@ python sistema_academia.py
 
 ## 👤 Autor
 
-**Mikaella Martins Silva**
-Centro Universitário Santo Agostinho (UNIFSA)
-Disciplina: Banco de Dados
+* **Mikaella Martins Silva**
+* Centro Universitário Santo Agostinho (UNIFSA)
+* Disciplina: Banco de Dados
